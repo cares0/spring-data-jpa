@@ -107,4 +107,15 @@ class MemberRepositoryTest {
             System.out.println("dto = " + dto);
         }
     }
+
+    @Test
+    public void returnType() {
+        Member memberA = new Member("member", 10);
+        Member memberB = new Member("member11", 20);
+        memberRepository.save(memberA);
+        memberRepository.save(memberB);
+
+        Member member = memberRepository.findMemberByUsername("member");
+
+    }
 }
